@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Carrusel YouTube</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="hero">
+    <!-- Barra superior -->
+    <div class="navbar">
+        <div class="logo">
+        <img src="styles/media/logo.png" alt="Logo" />
+        </div>
+        <nav class="nav-menu">
+        <ul>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#trabajos">Trabajos</a></li>
+            <li><a href="#cliente">Cliente</a></li>
+            <li><a href="#contacto" class="contact-btn">Contacto</a></li>        </ul>
+        </nav>
+    </div>
+
+    <!-- Fondo (video) -->
+    <video autoplay muted loop playsinline class="hero-bg">
+        <source src="styles/media/videos/video-presentacion.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Contenido central -->
+    <div class="hero-content">
+        <h2>EVENTOS</h2>
+        <h1>ÚNICOS</h1>
+        <p id="dynamic-text" class="typing-text">EN INAUGURACIONES</p>
+        <a href="#descubre" class="hero-btn">DESCUBRE MÁS</a>
+    </div>
+    </header>
+
+    <section class="slogan-banner">
+        <div class="slogan-content">
+            <h2>Transformamos Momentos en Recuerdos Inolvidables</h2>
+        </div>
+    </section>
+
+
+    <section class="servicios-section">
+        <div class="logo-servicios">
+            <img src="styles/media/logo.png" alt="Logo Servicios">
+        </div>
+        <h2 class="titulo-servicios">Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <img src="styles/media/icons/cube_516803.png" alt="Servicio 1">
+                <p>Fotografía Profesional</p>
+            </div>
+            <div class="servicio-card">
+                <img src="styles/media/icons/cube_516803.png" alt="Servicio 2">
+                <p>Producción de Video</p>
+            </div>
+                        <div class="servicio-card">
+                <img src="styles/media/icons/cube_516803.png" alt="Servicio 2">
+                <p>Tomas con Drone</p>
+            </div>
+                        <div class="servicio-card">
+                <img src="styles/media/icons/cube_516803.png" alt="Servicio 2">
+                <p>Edición Creativa</p>
+            </div>
+                        <div class="servicio-card">
+                <img src="styles/media/icons/cube_516803.png" alt="Servicio 2">
+                <p>Cobertura de Eventos</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    
+    <h1 class="h1-videos">Experiencias</h1>
+    <div class="video-grid" id="videoGrid"></div>
+
+
+
+
+    <section class="burbujas-section">
+    <h2 class="burbujas-titulo">Haz clic en una burbuja para saber más</h2> 
+    <div class="burbuja" onclick="mostrarInfo('nosotros')">Nosotros</div>
+    <div class="burbuja" onclick="mostrarInfo('mision')">Misión</div>
+    <div class="burbuja" onclick="mostrarInfo('vision')">Visión</div>
+    </section>
+
+    <!-- Modal info -->
+    <div id="info-modal" class="info-modal hidden">
+    <div class="info-content">
+        <span class="cerrar" onclick="cerrarInfo()">×</span>
+        <div id="info-text"></div>
+    </div>
+    </div>
+
+    <section class="clientes-section">
+    <h2>Nuestros Clientes</h2>
+    <div class="carousel-clientes container">
+        <div class="clientes-slider d-flex align-items-center">
+        <!-- Repite los logos para bucle infinito -->
+        <img src="cliente1.png" alt="Cliente 1" class="mx-4" />
+        <img src="cliente2.png" alt="Cliente 2" class="mx-4" />
+        <img src="cliente3.png" alt="Cliente 3" class="mx-4" />
+        <img src="cliente4.png" alt="Cliente 4" class="mx-4" />
+        <img src="cliente5.png" alt="Cliente 5" class="mx-4" />
+        <!-- Repetir para efecto continuo -->
+        <img src="cliente1.png" alt="Cliente 1" class="mx-4" />
+        <img src="cliente2.png" alt="Cliente 2" class="mx-4" />
+        <img src="cliente3.png" alt="Cliente 3" class="mx-4" />
+        <img src="cliente4.png" alt="Cliente 4" class="mx-4" />
+        <img src="cliente5.png" alt="Cliente 5" class="mx-4" />
+        <!-- Repetir para efecto continuo -->
+        <img src="cliente1.png" alt="Cliente 1" class="mx-4" />
+        <img src="cliente2.png" alt="Cliente 2" class="mx-4" />
+        <img src="cliente3.png" alt="Cliente 3" class="mx-4" />
+        <img src="cliente4.png" alt="Cliente 4" class="mx-4" />
+        <img src="cliente5.png" alt="Cliente 5" class="mx-4" />
+        </div>
+    </div>
+    </section>
+
+
+
+
+    <footer class="footer-contacto">
+        <div class="footer-contenedor">
+            <!-- Formulario a la izquierda -->
+            <div class="footer-formulario">
+            <h3>Contáctanos</h3>
+            <form id="formulario-contacto">
+                <input type="text" id="nombre" placeholder="Tu nombre" required>
+                <input type="email" id="email" placeholder="Tu correo electrónico" required>
+                <textarea id="mensaje" placeholder="Tu mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+                <p id="respuesta-formulario"></p>
+            </form>
+            </div>
+
+            <!-- Info empresa a la derecha -->
+            <div class="footer-info">
+            <img src="styles/media/img/logos/logofull-removebg-preview-removebg-preview.png" alt="Logo de la empresa" class="footer-logo">
+            <p><strong>Empresa XYZ SpA</strong></p>
+            <p>Construyendo confianza desde 2005</p>
+            <p>📍 Santiago, Chile</p>
+            <p>📞 +56 9 1234 5678</p>
+            <p>✉ contacto@empresa.cl</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function mostrarInfo(tipo) {
+        const modal = document.getElementById('info-modal');
+        const texto = document.getElementById('info-text');
+
+        let contenido = "";
+
+        switch (tipo) {
+            case "nosotros":
+            contenido = "<h2>Nosotros</h2><p>Somos una empresa apasionada por la tecnología, la innovación y el diseño que transforma ideas en realidades digitales.</p>";
+            break;
+            case "mision":
+            contenido = "<h2>Misión</h2><p>Impulsar el crecimiento de nuestros clientes mediante soluciones digitales creativas, eficientes y sostenibles.</p>";
+            break;
+            case "vision":
+            contenido = "<h2>Visión</h2><p>Ser referentes en el desarrollo digital, marcando tendencias y creando experiencias memorables.</p>";
+            break;
+        }
+
+        texto.innerHTML = contenido;
+        modal.classList.remove('hidden');
+        }
+
+        function cerrarInfo() {
+        document.getElementById('info-modal').classList.add('hidden');
+        }
+        </script>
+
+
+
+
+    <script>
+        const frases = [
+            "INAUGURACIONES",
+            "MATRIMONIOS",
+            "CUMPLEAÑOS",
+            "EVENTOS DEPORTIVOS",
+            "EVENTOS PARA EMPRESAS"
+        ];
+
+        let i = 0;
+        const textElement = document.getElementById("dynamic-text");
+
+        setInterval(() => {
+            i = (i + 1) % frases.length;
+            textElement.textContent = frases[i];
+        }, 2000); // cambia cada 2 segundos
+    </script>
+
+
+    <script>
+    const apiKey = "AIzaSyDV0af83D4egWjKVon_q36hO7rHjI6edxw";
+    const channelId = "UCmBlX9W1e9_KEkpkwuR5aig";
+    const maxResults = 9;
+
+    async function cargarVideos() {
+        const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`;
+        try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const videoGrid = document.getElementById("videoGrid");
+
+        data.items.forEach(item => {
+            if (item.id.kind === "youtube#video") {
+            const iframe = document.createElement("iframe");
+            iframe.src = `https://www.youtube.com/embed/${item.id.videoId}`;
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            videoGrid.appendChild(iframe);
+            }
+        });
+        } catch (error) {
+        console.error("Error al cargar videos:", error);
+        }
+    }
+
+    cargarVideos();
+    </script>
+
+
+    <script>
+        document.getElementById("formulario-contacto").addEventListener("submit", function (e) {
+            e.preventDefault();
+            document.getElementById("respuesta-formulario").textContent = "¡Mensaje enviado con éxito!";
+            this.reset();
+            setTimeout(() => {
+            document.getElementById("respuesta-formulario").textContent = "";
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
